@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victorian Love Postcard – Chandrashekar (Moon Moon) & Andrea's Love Story 💻🏍️🍸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --parchment: #f3eacb;
+      --text-dark: #f5f5f5;
+      --bg-dark: #1c1c1c;
+      --shadow: rgba(0, 0, 0, 0.7);
+      --transition-speed: 0.4s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #2c2c2c, #000);
+      color: var(--text-dark);
+      padding: 2rem;
+      line-height: 1.8; /* Increased line-height for better readability */
+    }
+
+    .postcard {
+      background: var(--parchment);
+      border: 8px solid var(--gold);
+      max-width: 850px;
+      margin: 3rem auto; /* Increased overall margin */
+      padding: 3rem; /* Increased padding */
+      box-shadow: 5px 5px 15px var(--shadow);
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--gold);
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 0 1px 3px var(--shadow);
+      margin-bottom: 1rem; /* Added space below heading */
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 1rem; /* Slight spacing after paragraphs */
+    }
+
+    .collage-container {
+      position: relative;
+      width: 100%;
+      height: 900px;
+      margin-top: 2rem;
+    }
+
+    .collage-item {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 3px solid var(--gold);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 3px 3px 15px var(--shadow);
+      cursor: pointer;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      transform: rotate(var(--rotation));
+    }
+
+    .collage-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .collage-item:hover {
+      transform: scale(1.1) rotate(0deg);
+      box-shadow: 5px 5px 20px var(--shadow);
+      z-index: 10;
+    }
+
+    .final-poem {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: var(--text-dark);
+      background: var(--bg-dark);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 2px dashed var(--gold);
+      margin-bottom: 3rem; /* Extra space at bottom */
+      line-height: 1.6; /* More comfortable spacing for poem text */
+      text-align: center;
+    }
+
+    .footer {
+      background: var(--gold);
+      color: #000;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      border-radius: 50px;
+      width: 250px;
+      margin: 0 auto;
+      margin-top: 2rem; /* Added slight space from the poem */
+      text-align: center;
+      box-shadow: 3px 3px 10px var(--shadow);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="postcard">
+    <header>
+      <h1>Happy Valentine's Day, My Love! ❤️</h1>
+      <p>Chandrashekar (Moon Moon) &amp; Andrea's Love Story 💻🏍️🍸</p>
+      <p>A fusion of flavor, speed, digital dreams, and endless passion.</p>
+    </header>
+
+    <div class="collage-container" id="collageContainer">
+      <script>
+        const images = [
+          "birthday.jpg.jpg", "sunflowers.jpg.jpg", "bookstore.jpg.jpg", "neon-pub.jpg.jpg", "rooftop-dinner.jpg.jpeg", 
+          "rainy-ride.jpg.jpg", "himalayan-trail.jpg.jpg", "lakeside.jpg.jpg", "beach.jpg.jpg", "city-bustle.jpg.jpg"
+        ];
+        
+        const collageContainer = document.getElementById('collageContainer');
+        images.forEach(src => {
+          const div = document.createElement('div');
+          div.classList.add('collage-item');
+          div.style.setProperty('--rotation', (Math.random() * 60 - 30) + 'deg');
+          div.style.left = (45 + Math.random() * 10 - 5) + '%'; 
+          div.style.top = (35 + Math.random() * 30 - 15) + '%';
+          div.style.transform += ' translateX(-50%) rotate(' + (Math.random() * 15 - 7) + 'deg) scale(1.05)';
+          
+          const img = document.createElement('img');
+          img.src = `images/${src}`;
+          img.alt = "Love Memory";
+          div.appendChild(img);
+          collageContainer.appendChild(div);
+        });
+      </script>
+    </div>
+
+    <div class="final-poem">
+      "Together we ride the midnight streets,<br>
+      Your smile ignites my heart with every beat.<br>
+      In whispered secrets of a dim-lit bar,<br>
+      And the roar of engines, we found who we are.<br>
+      Through every twist and every open road,<br>
+      Our love shines brighter than any code.<br>
+      Happy Valentine's Day, my love! ❤️"
+    </div>
+
+    <!-- Button that triggers the game -->
+    <button class="footer" id="startGameBtn" onclick="startGame()">Made with Love, Moon Moon ❤️</button>
+  </div>
+
+  <script>
+    function startGame() {
+      alert("Welcome to the Epic Adventure of Chandrashekar (Moon Moon) & Andrea!\n\nTonight, Andrea (the talented bartender) is in a frenzy. A legendary, once-lost secret recipe has been discovered, and Andrea believes it may be the key to creating the mythical 'Elixir of Eternal Passion.' However, there's trouble all around... and only you, Chandrashekar (Moon Moon) the fearless Biker, can help. Strap in and get ready for twists, turns, and surprises!");
+
+      // Step 1: The initial scenario
+      let firstMove = prompt(
+        "You, Chandrashekar (Moon Moon), arrive at the cozy roadside bar as the moonlight illuminates your chrome bike. Andrea rushes to you with worry in her eyes.\n\n" +
+        "1) Ask Andrea what’s wrong.\n" +
+        "2) Demand a strong drink first.\n" +
+        "3) Offer to fix anything that needs fixing."
+      );
+
+      switch (firstMove) {
+        case "1":
+          alert("Andrea: 'We just got a tip that the old distillery across town may hold the final ingredient for the Elixir of Eternal Passion, but it’s rumored to be guarded by a cunning rival biker gang.'");
+          break;
+        case "2":
+          alert("Andrea hurriedly hands you a shot of flaming whiskey. 'We don't have time for this, but I can see you need a burst of courage!' Then, she explains the crisis at hand: an old distillery, a secret ingredient, and a rival gang. Are you in?");
+          break;
+        case "3":
+          alert("Andrea: 'Thank you so much! The bar’s fine for now, but my heart won't be until we figure out the last piece of the puzzle for the Elixir of Eternal Passion. Rumor has it the missing ingredient is hidden in the old distillery... guarded by a gang!'");
+          break;
+        default:
+          alert("You hesitate, but Andrea pleads for your help. You finally listen to the story of the old distillery and the missing ingredient that might be there...");
+      }
+
+      // Step 2: The rumor about the rival biker gang
+      let secondMove = prompt(
+        "Andrea shows you a worn-out map with the distillery’s location. Suddenly, an ominous roar of motorcycle engines echoes outside. The rival biker gang is near!\n\n" +
+        "1) Sneak out the back and avoid confrontation.\n" +
+        "2) Storm outside and rev your bike, challenging them.\n" +
+        "3) Invite them in for a 'friendly drink' to see if you can negotiate."
+      );
+
+      switch (secondMove) {
+        case "1":
+          alert("You and Andrea slip out silently, using the shadows to your advantage. You manage to get on your bike and speed away, the map safely tucked in your jacket. The rival gang remains unaware... for now.");
+          break;
+        case "2":
+          alert("You step outside, meeting the rival gang face-to-face. They rev their engines in a show of force, but you refuse to back down. After a tense standoff, they let you pass, not before warning you that the distillery is their turf.");
+          break;
+        case "3":
+          alert("You throw the doors open and wave them in. 'First round’s on me!' The gang eyes you suspiciously but enters. Andrea plays along, pouring drinks. For a moment, there's a tense truce, though you know the real conflict is still brewing...");
+          break;
+        default:
+          alert("The rival gang's presence puts everyone on edge, but you decide to push on with your plan to reach the distillery, leaving them behind to puzzle over your next move.");
+      }
+
+      // Step 3: Journey to the old distillery
+      alert("Under the moonlit sky, you and Andrea set off toward the old distillery. The road is lined with twisting turns and shadowy trees. You feel the tension in the air, but you push forward.");
+
+      let distilleryEntrance = prompt(
+        "At last, you arrive at the rusted gates of the abandoned distillery. Inside, a labyrinth of crumbling walls and dusty corridors awaits. Where do you start?\n\n" +
+        "1) Investigate the decrepit office.\n" +
+        "2) Search the fermentation room.\n" +
+        "3) Climb the old watchtower to get a better view."
+      );
+
+      switch (distilleryEntrance) {
+        case "1":
+          alert("You tiptoe into the office, where desks are piled with ancient ledgers. A quick rummage reveals clues pointing to a hidden safe in the fermentation room. 'Could the secret ingredient be locked away?' wonders Andrea.");
+          break;
+        case "2":
+          alert("Stepping into the fermentation room, you’re overwhelmed by the aroma of old spirits. You notice a suspicious safe in the corner, covered in dust and complicated locks. Seems like this might be it!");
+          break;
+        case "3":
+          alert("You climb rickety stairs to the watchtower. The view is mesmerizing—and you spot the faint glow of a hidden compartment in the fermentation room below. 'That must be where the secret's kept,' Andrea exclaims.");
+          break;
+        default:
+          alert("Uncertain, you wander through echoing corridors. Eventually, you stumble into the fermentation room, drawn by an unusual glow near a heavy metal safe.");
+      }
+
+      // Step 4: The puzzle in the distillery
+      alert("Your attention is drawn to a large, locked safe. It's reinforced steel and has a puzzle lock on the front, covered in strange symbols and letters.");
+
+      let puzzleApproach = prompt(
+        "How do you plan to solve this puzzle?\n\n" +
+        "1) Try random combinations—maybe you’ll get lucky.\n" +
+        "2) Look around for clues or instructions.\n" +
+        "3) Attempt to pick the lock using your mechanical know-how."
+      );
+
+      switch (puzzleApproach) {
+        case "1":
+          alert("After dozens of random tries, the lock beeps angrily, threatening to jam. Andrea stops you before the safe self-destructs. 'We need a more systematic approach,' she says.");
+          break;
+        case "2":
+          alert("Searching the area, you find a tattered note hidden in a barrel: 'Four elements you must align: Fire, Water, Earth, and Air, in that order, to unlock desire.' This must be the combination to open the safe!");
+          break;
+        case "3":
+          alert("You carefully dismantle part of the lock panel, exposing wires and gear cogs. With your biker's mechanical expertise, you manage to partially bypass the puzzle—but you still need the correct sequence to open it fully.");
+          break;
+        default:
+          alert("Time is ticking. You examine the safe again, realizing there's a puzzle mechanism you must solve. Andrea urges you to think cleverly.");
+      }
+
+      // Step 5: The final puzzle input
+      let puzzleAnswer = prompt(
+        "You recall the note or partial knowledge: 'Four elements in a certain order.' Which order do you try?\n\n" +
+        "Type your guess in the format Fire-Water-Earth-Air (for example)."
+      );
+
+      puzzleAnswer = puzzleAnswer.toLowerCase().replace(/\s+/g, "");
+
+      if (puzzleAnswer === "fire-water-earth-air" || puzzleAnswer === "firewaterearthair") {
+        alert("Click! The safe lock whirls, then pops open. Inside is a dusty bottle labeled 'Essence of Eternal Passion.' Andrea’s eyes shine with awe!");
+      } else {
+        alert("You hear a clank from inside the safe as it rejects your combination. Maybe there's another clue. Still, after several tries, you finally guess the correct sequence, and the safe opens, revealing the elusive bottle!");
+      }
+
+      // Step 6: The Rival Gang’s Return
+      alert("Just as you secure the bottle, you hear engines roaring outside. The rival gang has tracked you here! They storm in, demanding the secret ingredient.");
+
+      let rivalEncounter = prompt(
+        "How do you handle the confrontation?\n\n" +
+        "1) Offer them a share of the Elixir.\n" +
+        "2) Rev your bike indoors—scattering them with a daring show.\n" +
+        "3) Propose a race at dawn to decide who keeps it."
+      );
+
+      switch (rivalEncounter) {
+        case "1":
+          alert("They pause, intrigued by your offer. After tense negotiations, you propose combining the power of both biker crews to produce enough Elixir for everyone. A shaky alliance is formed!");
+          break;
+        case "2":
+          alert("You hop on your bike, rev the engine hard, and speed around the distillery, the roaring echo reverberating off the walls. The rival gang scrambles in confusion, giving you enough time to escape with Andrea and the bottle!");
+          break;
+        case "3":
+          alert("'At dawn, on the open road, we settle this!' you declare. The gang agrees. Andrea looks concerned but trusts you. You ride off into the night, preparing for an epic showdown in the morning.");
+          break;
+        default:
+          alert("In the chaos, you and Andrea slip away with the bottle. The rival gang shouts threats into the darkness as you disappear on your roaring motorcycle.");
+      }
+
+      // Step 7: Celebration or Showdown
+      alert("Despite the confrontation, you and Andrea manage to get the precious ingredient back to the bar. The final touches are made to the Elixir of Eternal Passion. It sparkles with an otherworldly glow.");
+
+      let finaleChoice = prompt(
+        "Now that you have the Elixir, how do you use it?\n\n" +
+        "1) Share a toast with everyone in the bar, celebrating unity and love.\n" +
+        "2) Save it as a rare treasure to protect for future generations.\n" +
+        "3) Serve it exclusively to each other, forging an unbreakable bond."
+      );
+
+      switch (finaleChoice) {
+        case "1":
+          alert("The entire bar gathers around as Andrea pours the shimmering Elixir into shot glasses. Laughter, cheers, and warm embraces fill the air as you all raise a toast to adventure, love, and friendship!");
+          break;
+        case "2":
+          alert("You and Andrea store the Elixir securely, vowing to guard it until the world truly needs it. Legends will be told of Chandrashekar (Moon Moon) and Andrea who safeguarded the Essence of Eternal Passion.");
+          break;
+        case "3":
+          alert("In a tender moment, you and Andrea each take a sip, eyes locked in mutual admiration. The Elixir’s magic radiates around you both, sealing a story of devotion, bravery, and love.");
+          break;
+        default:
+          alert("In the end, you decide the Elixir’s fate together, trusting the bond you forged through this long journey. Whatever happens next, your story becomes legend.");
+      }
+
+      // The grand conclusion
+      alert("Congratulations! You’ve completed an epic journey filled with secret recipes, rival biker standoffs, mysterious puzzles, and a heartwarming bond between Chandrashekar (Moon Moon) and Andrea.\n\nThank you for playing! May your future rides be thrilling and your drinks ever-satisfying!");
+    }
+  </script>
+</body>
+</html>
