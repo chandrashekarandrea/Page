@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2025💻🏍️🍸</title>
+  <title>2025🍸🏍️💻</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -11,6 +11,8 @@
       --parchment: #f3eacb;
       --text-dark: #f5f5f5;
       --bg-dark: #1c1c1c;
+      --neon-pink: #ff007f;
+      --neon-blue: #00eaff;
       --shadow: rgba(0, 0, 0, 0.7);
       --transition-speed: 0.4s;
     }
@@ -26,15 +28,15 @@
       background: radial-gradient(circle at top, #2c2c2c, #000);
       color: var(--text-dark);
       padding: 2rem;
-      line-height: 1.8; /* Increased line-height for better readability */
+      line-height: 1.8;
     }
 
     .postcard {
       background: var(--parchment);
       border: 8px solid var(--gold);
       max-width: 850px;
-      margin: 3rem auto; /* Increased overall margin */
-      padding: 3rem; /* Increased padding */
+      margin: 3rem auto;
+      padding: 3rem;
       box-shadow: 5px 5px 15px var(--shadow);
       border-radius: 10px;
       text-align: center;
@@ -43,17 +45,17 @@
 
     header h1 {
       font-size: 3rem;
-      color: var(--gold);
+      color: var(--neon-pink);
       font-family: 'Great Vibes', cursive;
-      text-shadow: 0 1px 3px var(--shadow);
-      margin-bottom: 1rem; /* Added space below heading */
+      text-shadow: 0 0 10px var(--neon-pink);
+      margin-bottom: 1rem;
     }
 
     header p {
       font-size: 1.3rem;
       color: var(--gold);
       font-style: italic;
-      margin-bottom: 1rem; /* Slight spacing after paragraphs */
+      margin-bottom: 1rem;
     }
 
     .collage-container {
@@ -67,10 +69,10 @@
       position: absolute;
       width: 240px;
       height: 240px;
-      border: 3px solid var(--gold);
+      border: 3px solid var(--neon-blue);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 3px 3px 15px var(--shadow);
+      box-shadow: 0 0 15px var(--neon-blue);
       cursor: pointer;
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       transform: rotate(var(--rotation));
@@ -85,7 +87,7 @@
 
     .collage-item:hover {
       transform: scale(1.1) rotate(0deg);
-      box-shadow: 5px 5px 20px var(--shadow);
+      box-shadow: 0 0 20px var(--neon-blue);
       z-index: 10;
     }
 
@@ -93,76 +95,57 @@
       font-family: 'Great Vibes', cursive;
       font-size: 1.8rem;
       color: var(--text-dark);
-      background: var(--bg-dark);
+      background: linear-gradient(135deg, rgba(28,28,28,0.8), rgba(255,0,127,0.6));
       padding: 2rem;
       border-radius: 8px;
       border: 2px dashed var(--gold);
-      margin-bottom: 3rem; /* Extra space at bottom */
-      line-height: 1.6; /* More comfortable spacing for poem text */
+      margin-bottom: 3rem;
+      line-height: 1.6;
       text-align: center;
     }
 
     .footer {
-      background: var(--gold);
+      background: var(--neon-pink);
       color: #000;
       padding: 1rem;
       font-size: 1.2rem;
       font-family: 'Playfair Display', serif;
       border-radius: 50px;
-      width: 250px;
+      width: 280px;
       margin: 0 auto;
-      margin-top: 2rem; /* Added slight space from the poem */
+      margin-top: 2rem;
       text-align: center;
-      box-shadow: 3px 3px 10px var(--shadow);
+      box-shadow: 0 0 15px var(--neon-pink);
       cursor: pointer;
+      transition: background var(--transition-speed), box-shadow var(--transition-speed);
+    }
+
+    .footer:hover {
+      background: var(--gold);
+      box-shadow: 0 0 20px var(--gold);
     }
   </style>
 </head>
 <body>
   <div class="postcard">
     <header>
-      <h1>Happy Valentine's Day, My Love! ❤️</h1>
+      <h1>Cheers to Love, My Bartender! 🍸</h1>
       <p>Chandrashekar (Moon Moon) &amp; Andrea's Love Story 💻🏍️🍸</p>
-      <p>A fusion of flavor, speed, digital dreams, and endless passion.</p>
+      <p>A cocktail of adventure, passion, and timeless romance.</p>
     </header>
 
-    <div class="collage-container" id="collageContainer">
-      <script>
-        const images = [
-          "birthday.jpg.jpg", "sunflowers.jpg.jpg", "bookstore.jpg.jpg", "neon-pub.jpg.jpg", "rooftop-dinner.jpg.jpeg", 
-          "rainy-ride.jpg.jpg", "himalayan-trail.jpg.jpg", "lakeside.jpg.jpg", "beach.jpg.jpg", "city-bustle.jpg.jpg"
-        ];
-        
-        const collageContainer = document.getElementById('collageContainer');
-        images.forEach(src => {
-          const div = document.createElement('div');
-          div.classList.add('collage-item');
-          div.style.setProperty('--rotation', (Math.random() * 60 - 30) + 'deg');
-          div.style.left = (45 + Math.random() * 10 - 5) + '%'; 
-          div.style.top = (35 + Math.random() * 30 - 15) + '%';
-          div.style.transform += ' translateX(-50%) rotate(' + (Math.random() * 15 - 7) + 'deg) scale(1.05)';
-          
-          const img = document.createElement('img');
-          img.src = `images/${src}`;
-          img.alt = "Love Memory";
-          div.appendChild(img);
-          collageContainer.appendChild(div);
-        });
-      </script>
-    </div>
+    <div class="collage-container" id="collageContainer"></div>
 
     <div class="final-poem">
-      "Together we ride the midnight streets,<br>
-      Your smile ignites my heart with every beat.<br>
-      In whispered secrets of a dim-lit bar,<br>
-      And the roar of engines, we found who we are.<br>
-      Through every twist and every open road,<br>
-      Our love shines brighter than any code.<br>
-      Happy Valentine's Day, my love! ❤️"
+      "In the rhythm of a shaker, in the hum of neon light,<br>
+      We crafted memories that burned so bright.<br>
+      A touch of whiskey, a twist of fate,<br>
+      Together we mix love—our own perfect state.<br>
+      Through every pour, in every glass,
+      Our love, like the finest spirit, will forever last."
     </div>
-
     <!-- Button that triggers the game -->
-    <button class="footer" id="startGameBtn" onclick="startGame()">Made with Love, Moon Moon ❤️</button>
+    <button class="footer" id="startGameBtn" onclick="startGame()">Sip & Ride, Moon Moon ❤️</button>
   </div>
 
   <script>
